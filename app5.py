@@ -100,10 +100,11 @@ if st.button("🔮 Predict Cluster"):
     st.success(f"✅ This customer belongs to **Cluster {cluster}**")
 
     # Cluster interpretation
-    if cluster == 0:
-        st.info("Cluster 0: Likely lower spending / conservative customers")
-    else:
-        st.info("Cluster 1: Likely higher spending / responsive customers")
+    if df["Income"] == income:
+        if df["Cluster"] == 0:
+            st.info("Cluster 0: Likely lower spending / conservative customers")
+        else:
+            st.info("Cluster 1: Likely higher spending / responsive customers")
 
     # --------------------------------------------------
     # Cluster Probability Visualization
@@ -121,6 +122,7 @@ if st.button("🔮 Predict Cluster"):
         f"Prediction confidence for Cluster {cluster}: "
         f"**{probabilities[cluster]*100:.2f}%**"
     )
+
 
 
 
