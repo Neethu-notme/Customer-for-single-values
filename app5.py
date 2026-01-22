@@ -17,7 +17,7 @@ st.write("Predict which customer cluster a user belongs to")
 # --------------------------------------------------
 @st.cache_data
 def load_data():
-    df = pd.read_csv("marketing_campaign.csv")
+    df = pd.read_csv("marketing_eda.csv")
     return df
 
 df = load_data()
@@ -121,3 +121,4 @@ if st.button("🔮 Predict Cluster"):
         f"Prediction confidence for Cluster {cluster}: "
         f"**{probabilities[cluster]*100:.2f}%**"
     )
+
