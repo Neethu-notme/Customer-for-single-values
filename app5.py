@@ -62,7 +62,7 @@ st.subheader("🔍 Enter Customer Details")
 
 education = st.selectbox("Education", df["Education"].unique())
 marital_status = st.selectbox("Marital Status", df["Marital_Status"].unique())
-income = st.number_input("Income (1000 - 24500)", df["Income"].unique())
+income = st.selectbox("Income", df["Income"].unique() )
 
 # --------------------------------------------------
 # Create input dataframe
