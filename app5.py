@@ -62,7 +62,7 @@ st.subheader("🔍 Enter Customer Details")
 
 education = st.selectbox("Education", df["Education"].unique())
 marital_status = st.selectbox("Marital Status", df["Marital_Status"].unique())
-income = st.number_input("Income", min_value=0, step=1000)
+income = st.number_input("Income (1000 - 24500)", df["Income"].unique())
 
 # --------------------------------------------------
 # Create input dataframe
@@ -121,4 +121,5 @@ if st.button("🔮 Predict Cluster"):
         f"Prediction confidence for Cluster {cluster}: "
         f"**{probabilities[cluster]*100:.2f}%**"
     )
+
 
